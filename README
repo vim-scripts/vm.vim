@@ -1,0 +1,26 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3870
+
+This is a Velocity Template Language syntax highlighter + filetype plugin. It features support of shorthand $my.some.reference(something) and longhand ${my.some.reference(something)} notations for both references and directives (including user defined macros). Everything described on the official web page (http://velocity.apache.org/engine/devel/user-guide.html) is supported. Supports directives along with user defined macros one line and multiline. Error handling of incorrectly placed directives. References can be mutliline, so that 
+
+$myref.long.array[ 3 ]. 
+something. 
+take 
+.fromHere() 
+
+is also supported. Directives and references' methods and arrays can contain comments, unformatted text and doxygen comments.
+
+Special references sequences (e.g. $foreach.parent.index or $foreach.topmost.hasNext) are recognized as keywords if they are contained.
+
+Two types of strings are supported. References inside double quotes "" are highlighted. 
+
+Matchit support is introduced which allows you to jump from the start of a block (i.e. #if(), #foreach(), #define(), #macro(), #@any_user_macro()) to the end of the block (#end | #{end}) and vice versa with % just like you jump between opening and closing brackets. 
+
+Also all multiline directives supports folding. 
+
+Only directives described on the official web-page are recognized as system directives, user defined directives are recognized differently and can be one line or multiline. 
+
+Comments are automatically expanded to the next line while a user types them and appropriately recognized by vim engine. 
+
+NOTE: this differs from velocity.vim (http://www.vim.org/scripts/script.php?script_id=541) in many cases, which provides only basic capability, which doesn't include recogniton of multiline entities. It doesn't support system directives and error handling. No way to jump between openinig and closing directive. No support of nonparsable blocks. That script is really very basic (no offence to the author). 
+
+This one provides all the capabilites described on the official web-page (http://velocity.apache.org/engine/devel/user-guide.html) 
