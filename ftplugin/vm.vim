@@ -24,7 +24,7 @@ setlocal commentstring=#*%s*#
 setlocal formatoptions-=t formatoptions+=croql
 
 " don't reset indentation after '#' character
-inoremap <buffer> # X#
+"inoremap <buffer> # X#
 
 " do the mapping for comments section
 "inoremap <buffer> #* #*<CR><CR><BACKSPACE>#<UP><SPACE>
@@ -50,6 +50,8 @@ if exists("loaded_matchit")
     let b:match_skip = 's:comment\|string'
     " which keywords will be cycled if '%' is pressed
     let b:match_words = '#{\?\(if\|foreach\|define\|macro\|@[a-zA-Z][a-zA-Z0-9\-_]*\)\s*('.':'
+                      \.'#\(else\>\|{else}\)'.':'
+                      \.'#\(elseif\>\|{elseif}\)'.':'
                       \.'#\(end\>\|{end}\)'
 endif
 
